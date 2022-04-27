@@ -1,12 +1,12 @@
 <template>
   <div class="">
     <!-- header  -->
-    <div class="bg-cyan-300 p-4 flex justify-between items-center">
-      <h1 class="font-bold font-mono text-3xl">Pokemons-Pokedox</h1>
+    <div class="bg-orange-400 p-4 flex justify-between items-center">
+      <h1 class="font-bold font-sans text-3xl">Pokemons (Pokedox)</h1>
       <div>
         <div>
           <input
-            class="rounded border-solid font-mono text-center border-2 border-sky-500"
+            class="rounded border-solid font-sans text-center border-2 border-red-500"
             v-model="searchName"
             type="text"
             placeholder="Search Pokemon here"
@@ -18,12 +18,12 @@
     <div class="pb-12">
       <div
         v-if="pokemons.length > 0"
-        class="bg-cyan-300 grid grid-cols-2 md:grid-cols-5 gap-2"
+        class="bg-gray-400 grid grid-cols-2 md:grid-cols-6 gap-2"
       >
         <div
           v-for="(p, i) in pokemons"
           :key="i"
-          class="text-center bg-orange-50 tracking-wide font-mono border-2 border-blue-400 rounded-xl text-black"
+          class="text-center bg-orange-50 tracking-wide font-sans border-2 border-red-500 rounded-full pt-10 text-black"
         >
           <RouterLink :to="'/pokemon/' + p.name">
             <div>{{ p.name }}</div>
@@ -37,7 +37,7 @@
     </div>
     <!-- footer  -->
     <div
-      class="bg-cyan-400 flex justify-between items-center px-4 fixed bottom-0 w-full p-2"
+      class="bg-orange-400 flex justify-between items-center px-4 fixed bottom-0 w-full p-2"
     >
       <Icon
         @click="pagination.offset -= 1"
@@ -69,12 +69,12 @@ const pokemons = ref([]);
 const searchName = ref("");
 
 const pagination = reactive({
-  limit: 10,
+  limit: 12,
   offset: 0,
 });
 
 async function getPokemons(pagination = {}) {
-  const { limit = 10, offset = 0 } = pagination;
+  const { limit = 12, offset = 0 } = pagination;
   try {
     const results = [];
     const res = await fetch(

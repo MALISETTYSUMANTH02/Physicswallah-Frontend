@@ -1,15 +1,15 @@
 <template>
-  <div class="bg-gray-900">
-    <div class="text-center font-mono text-xl text-white">
+  <div class="bg-pink-800">
+    <div class="text-center font-sans text-2xl pt-20 text-white">
       Pokemon Detail page
     </div>
     <div class="flex flex-col items-center justify-center">
       <img
-        class="bg-cyan-300 w-50 h-50 mb-10 mt-10 rounded-full align-center"
+        class="bg-orange-300 w-50 h-50 mb-10 mt-10 rounded-full align-center"
         :src="pokemon.imgUrl"
         alt=""
       />
-      <div class="text-cyan-100 font-mono">
+      <div class="text-cyan-100 font-sans">
         <div class="h-8">NAME: {{ pokemon.name }}</div>
         <div class="h-8">BASE EXPERIENCE: {{ pokemon.baseExperience }}</div>
         <div class="h-8">HEIGHT: {{ pokemon.height }}</div>
